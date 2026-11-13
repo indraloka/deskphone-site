@@ -3,24 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Legal — deskphone</title>
+<title>deskphone — Your iPhone, a desktop on any screen</title>
+<meta name="description" content="deskphone turns your iPhone into a trackpad and keyboard for a windowed desktop workspace on any TV or monitor. Join the waiting list.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0a1a34">
+<meta property="og:title" content="deskphone — Your iPhone, a desktop on any screen">
+<meta property="og:description" content="A trackpad, a keyboard and a windowed workspace on any TV or monitor. Just your iPhone.">
+<meta property="og:image" content="logo.png">
 <link rel="stylesheet" href="style.css">
+<style>
+main{max-width:860px}
+.lead{font-size:21px;line-height:1.45;color:var(--muted);max-width:620px;margin:0 auto 28px;text-align:center}
+.hero h1{font-size:46px}
+.wl{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap}
+.wl input[type=email]{flex:1 1 220px;min-width:0;padding:14px 16px;font:inherit;border:1px solid var(--line);border-radius:14px;background:transparent;color:var(--fg)}
+.wl input[type=email]:focus{outline:2px solid var(--link);border-color:transparent}
+.wl button{padding:14px 22px;font:inherit;font-weight:600;border:0;border-radius:14px;background:var(--brand);color:#04241a;cursor:pointer}
+.wl button:hover{filter:brightness(1.06)}
+.wl button:disabled{opacity:.6;cursor:default}
+.hp{position:absolute;left:-9999px}
+.msg{text-align:center;min-height:1.6em;margin-top:12px;font-size:15px;color:var(--muted)}
+.note{text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:20px}
+.grid .card{cursor:default}
+.grid .card:hover{border-color:var(--line)}
+.grid .card strong{display:block;margin-bottom:4px}
+.steps{counter-reset:s;display:grid;gap:12px;padding:0;list-style:none}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start;margin:0}
+.steps li::before{content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:600;display:grid;place-items:center;font-size:14px}
+.lang{font-size:14px}
+.lang button{background:none;border:0;color:var(--link);font:inherit;cursor:pointer;padding:0 2px}
+.lang button[aria-pressed=true]{font-weight:700;color:var(--fg)}
+.pro{margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:16px}
+</style>
 </head>
 <body>
 <main>
-<header><a class="brand" href="./"><img src="logo.png" alt="deskphone logo" width="44" height="44">deskphone</a><nav><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav></header>
-<div class="hero"><img src="logo.png" alt="deskphone logo" width="112" height="112"><h1>deskphone</h1>
-<p class="meta">Your iPhone, a desktop workspace on any display.</p></div>
-<div class="cards">
-<a class="card" href="privacy.html"><strong>Privacy Policy</strong><span>What the app stores on your device and what it never collects.</span></a>
-<a class="card" href="terms.html"><strong>Terms of Use</strong><span>The agreement for using deskphone and the deskphone Pro subscription.</span></a>
+<header><a class="brand" href="./"><img src="logo.png" alt="deskphone logo" width="44" height="44">deskphone</a>
+<nav><span class="lang"><button data-l="en" aria-pressed="true">EN</button>·<button data-l="id" aria-pressed="false">ID</button></span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></header>
+
+<section class="hero">
+<img src="logo.png" alt="deskphone logo" width="112" height="112">
+<h1 data-t="h1">Your iPhone, a desktop on any screen.</h1>
+</section>
+<p class="lead" data-t="lead">deskphone turns your iPhone into a trackpad and keyboard for a windowed workspace on a TV or monitor. No laptop needed.</p>
+
+<form class="wl" id="wl" novalidate>
+<input type="email" name="email" id="email" required autocomplete="email" placeholder="you@example.com" data-p="ph" aria-label="Email">
+<input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button type="submit" id="btn" data-t="join">Join the waiting list</button>
+</form>
+<p class="msg" id="msg" role="status" aria-live="polite"></p>
+<p class="note" data-t="note">Coming soon to iPhone. One email at launch, nothing else.</p>
+
+<h2 data-t="whyh">Why deskphone</h2>
+<div class="grid">
+<div class="card"><strong data-t="a1">A real workspace</strong><span data-t="a1d">Draggable windows, a Dock, Split View and Spotlight-style search, drawn on the big screen.</span></div>
+<div class="card"><strong data-t="a2">iPhone as the controller</strong><span data-t="a2d">Trackpad, keyboard and volume in your hand. The screen shows the workspace, not your phone.</span></div>
+<div class="card"><strong data-t="a3">Works over cable or AirPlay</strong><span data-t="a3d">USB-C/HDMI or AirPlay to a TV, projector or monitor. Hotel, classroom or living room.</span></div>
+<div class="card"><strong data-t="a4">Private by design</strong><span data-t="a4d">No account and no tracking. Locked windows open with Face ID.</span></div>
 </div>
-<h2>Support</h2>
-<p>Questions or problems? Email <a href="mailto:indralokaps@gmail.com">indralokaps@gmail.com</a>.</p>
-<footer>© 2026 indralokaps. Contact: <a href="mailto:indralokaps@gmail.com">indralokaps@gmail.com</a></footer>
+
+<h2 data-t="howh">How it works</h2>
+<ol class="steps">
+<li data-t="s1">Connect your iPhone to a screen with a cable or AirPlay.</li>
+<li data-t="s2">The workspace appears on the big screen.</li>
+<li data-t="s3">Use your iPhone as a trackpad and keyboard to open, move and arrange windows.</li>
+</ol>
+
+<div class="pro"><strong data-t="proh">Free to start, Pro when you need more</strong>
+<p style="margin:6px 0 0;color:var(--muted)" data-t="prod">Free includes one window. Pro adds multiple windows, Split View, saved workspaces, browser profiles, Face ID lock and Calendar &amp; Reminder alerts.</p></div>
+
+<footer><span data-t="foot">© 2026 indralokaps. Questions? </span><a href="mailto:indralokaps@gmail.com">indralokaps@gmail.com</a> · <a href="legal.html">Legal</a><br>
+<span data-t="tm">deskphone is an independent app and is not affiliated with Apple or any third-party brand.</span></footer>
 </main>
+<script>
+// Waiting-list endpoint (Formspree-style: accepts a POST with "email" and returns JSON).
+// Leave empty to fall back to opening an email draft until an endpoint is set.
+var WAITLIST_ENDPOINT = "";
+var T={en:{h1:"Your iPhone, a desktop on any screen.",lead:"deskphone turns your iPhone into a trackpad and keyboard for a windowed workspace on a TV or monitor. No laptop needed.",join:"Join the waiting list",ph:"you@example.com",note:"Coming soon to iPhone. One email at launch, nothing else.",whyh:"Why deskphone",a1:"A real workspace",a1d:"Draggable windows, a Dock, Split View and Spotlight-style search, drawn on the big screen.",a2:"iPhone as the controller",a2d:"Trackpad, keyboard and volume in your hand. The screen shows the workspace, not your phone.",a3:"Works over cable or AirPlay",a3d:"USB-C/HDMI or AirPlay to a TV, projector or monitor. Hotel, classroom or living room.",a4:"Private by design",a4d:"No account and no tracking. Locked windows open with Face ID.",howh:"How it works",s1:"Connect your iPhone to a screen with a cable or AirPlay.",s2:"The workspace appears on the big screen.",s3:"Use your iPhone as a trackpad and keyboard to open, move and arrange windows.",proh:"Free to start, Pro when you need more",prod:"Free includes one window. Pro adds multiple windows, Split View, saved workspaces, browser profiles, Face ID lock and Calendar & Reminder alerts.",foot:"© 2026 indralokaps. Questions? ",tm:"deskphone is an independent app and is not affiliated with Apple or any third-party brand.",ok:"You're on the list. Thank you!",bad:"Please enter a valid email.",err:"Something went wrong. Please try again."},
+id:{h1:"iPhone-mu, jadi desktop di layar mana pun.",lead:"deskphone mengubah iPhone menjadi trackpad dan keyboard untuk ruang kerja multi-jendela di TV atau monitor. Tanpa laptop.",join:"Gabung daftar tunggu",ph:"kamu@contoh.com",note:"Segera hadir di iPhone. Satu email saat rilis, tidak lebih.",whyh:"Kenapa deskphone",a1:"Ruang kerja sungguhan",a1d:"Jendela yang bisa digeser, Dock, Split View, dan pencarian ala Spotlight, tampil di layar besar.",a2:"iPhone sebagai kontroler",a2d:"Trackpad, keyboard, dan volume di tanganmu. Layar menampilkan ruang kerja, bukan ponselmu.",a3:"Lewat kabel atau AirPlay",a3d:"USB-C/HDMI atau AirPlay ke TV, proyektor, atau monitor. Di hotel, kelas, atau ruang tamu.",a4:"Privat sejak awal",a4d:"Tanpa akun dan tanpa pelacakan. Jendela terkunci dibuka dengan Face ID.",howh:"Cara kerjanya",s1:"Hubungkan iPhone ke layar dengan kabel atau AirPlay.",s2:"Ruang kerja muncul di layar besar.",s3:"Pakai iPhone sebagai trackpad dan keyboard untuk membuka, memindah, dan menata jendela.",proh:"Gratis untuk mulai, Pro saat butuh lebih",prod:"Gratis mencakup satu jendela. Pro menambah multi-jendela, Split View, workspace tersimpan, profil browser, kunci Face ID, dan notifikasi Kalender & Pengingat.",foot:"© 2026 indralokaps. Pertanyaan? ",tm:"deskphone adalah aplikasi independen dan tidak berafiliasi dengan Apple atau merek pihak ketiga mana pun.",ok:"Kamu sudah masuk daftar. Terima kasih!",bad:"Masukkan email yang valid.",err:"Terjadi kesalahan. Coba lagi."}};
+var lang=(navigator.language||"").slice(0,2)==="id"?"id":"en";
+try{lang=localStorage.getItem("l")||lang}catch(e){}
+function apply(l){lang=l;document.documentElement.lang=l;
+ document.querySelectorAll("[data-t]").forEach(function(e){e.textContent=T[l][e.dataset.t]});
+ document.querySelectorAll("[data-p]").forEach(function(e){e.placeholder=T[l][e.dataset.p]});
+ document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===l)});
+ try{localStorage.setItem("l",l)}catch(e){}}
+document.querySelectorAll(".lang button").forEach(function(b){b.onclick=function(){apply(b.dataset.l)}});
+apply(lang);
+var f=document.getElementById("wl"),msg=document.getElementById("msg"),btn=document.getElementById("btn");
+f.addEventListener("submit",function(ev){ev.preventDefault();
+ var em=f.email.value.trim();
+ if(f.company.value||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent=T[lang].bad;return}
+ if(!WAITLIST_ENDPOINT){location.href="mailto:indralokaps@gmail.com?subject="+encodeURIComponent("deskphone waiting list")+"&body="+encodeURIComponent("Please add me to the deskphone waiting list: "+em);return}
+ btn.disabled=true;
+ fetch(WAITLIST_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email:em})})
+ .then(function(r){if(!r.ok)throw 0;msg.textContent=T[lang].ok;f.reset()})
+ .catch(function(){msg.textContent=T[lang].err})
+ .then(function(){btn.disabled=false})});
+</script>
 </body>
 </html>
