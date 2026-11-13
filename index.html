@@ -16,7 +16,7 @@
 main{max-width:860px}
 .lead{font-size:21px;line-height:1.45;color:var(--muted);max-width:620px;margin:0 auto 28px;text-align:center}
 .hero h1{font-size:46px}
-.tally{max-width:480px;margin:0 auto;text-align:center}
+.tally{max-width:480px;margin:0 auto;text-align:center;background:#fff;border-radius:18px;padding:14px 10px;box-shadow:0 6px 24px rgba(10,26,52,.18)}
 .btn{display:inline-block;padding:14px 22px;border-radius:14px;background:var(--brand);color:#04241a;font-weight:600}
 .btn:hover{text-decoration:none;filter:brightness(1.06)}
 .wl{display:flex;gap:10px;max-width:480px;margin:0 auto;flex-wrap:wrap}
@@ -98,7 +98,7 @@ var TALLY_FORM_ID = "DqkYY5";
  if(!TALLY_FORM_ID){
   box.innerHTML='<a class="btn" href="mailto:indralokaps@gmail.com?subject=deskphone%20waiting%20list">Email us to join</a>';return}
  var i=document.createElement("iframe");
- i.src="https://tally.so/embed/"+TALLY_FORM_ID+"?hideTitle=1&transparentBackground=1&dynamicHeight=1&alignLeft=1";
+ i.src="https://tally.so/embed/"+TALLY_FORM_ID+"?hideTitle=1&dynamicHeight=1";
  i.title="deskphone waiting list";i.loading="lazy";i.setAttribute("width","100%");i.setAttribute("height","140");i.setAttribute("frameborder","0");
  i.style.border="0";box.appendChild(i);
  var sc=document.createElement("script");sc.src="https://tally.so/widgets/embed.js";
